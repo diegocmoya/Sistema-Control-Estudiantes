@@ -58,7 +58,6 @@ public class GUIEstudiante extends Ventana {
         panelBotonesAccion = new vista.PanelBotonesAccion();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(588, 266));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -125,6 +124,6 @@ public class GUIEstudiante extends Ventana {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private vista.PanelBotonesAccion panelBotonesAccion;
-    public static vista.PanelEstudiante panelEstudiante;
+    private vista.PanelEstudiante panelEstudiante;
     // End of variables declaration//GEN-END:variables
 }

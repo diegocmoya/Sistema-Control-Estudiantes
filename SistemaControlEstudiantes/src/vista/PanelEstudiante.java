@@ -5,7 +5,6 @@
 package vista;
 
 import javax.swing.JOptionPane;
-import javax.swing.JTextField;
 import modelo.Estudiante;
 
 /**
