@@ -4,6 +4,7 @@
  */
 package vista;
 
+import modelo.RegistroCurso;
 import modelo.RegistroEstudiantes;
 
 /**
@@ -16,10 +17,12 @@ public class Menu extends javax.swing.JFrame {
      * Creates new form Menu
      */
     RegistroEstudiantes registroEstudiantes;
+    RegistroCurso registroCurso;
     
     public Menu() {
         initComponents();
         registroEstudiantes=new RegistroEstudiantes();
+        registroCurso=new RegistroCurso();  
     }
 
     /**
@@ -91,9 +94,12 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jmiEstudianteActionPerformed
 
     private void jmiCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiCursoActionPerformed
-            
+        GUIAdminCurso gUIAdminCurso=new GUIAdminCurso();
+        gUIAdminCurso.setRegistroCurso(registroCurso);
+        gUIAdminCurso.init();
+        gUIAdminCurso.setVisible(true);
     }//GEN-LAST:event_jmiCursoActionPerformed
-
+    
     /**
      * @param args the command line arguments
      */

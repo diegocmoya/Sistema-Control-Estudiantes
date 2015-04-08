@@ -5,6 +5,10 @@
  */
 package vista;
 
+import controlador.ManejadorCurso;
+import modelo.Curso;
+import modelo.RegistroCurso;
+
 /**
  *
  * @author home
@@ -15,8 +19,22 @@ public class GUIAdminCurso extends GUIMantenimientoCurso {
      * Creates new form GUIAdminCurso
      */
     public GUIAdminCurso() {
-        initComponents();
+        super();
     }
+    
+    RegistroCurso registro;
+    
+     public void setRegistroCurso(RegistroCurso registro){
+         this.registro=registro;           
+    }
+    
+    public void init(){
+        setDatosTabla(registro.getMatrizCurso(), Curso.getEtiquetasAtributos());
+        setCamposClave(Curso.getEtiquetasAtributos());
+        ManejadorCurso manejador=new ManejadorCurso(registro,this);
+        setControlador(manejador);      
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.

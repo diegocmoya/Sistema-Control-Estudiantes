@@ -5,17 +5,47 @@
  */
 package vista;
 
+import controlador.Controlador;
+
 /**
  *
  * @author home
  */
-public class GUIMantenimientoCurso extends javax.swing.JFrame {
+public class GUIMantenimientoCurso extends Ventana {
 
     /**
      * Creates new form GUIMantenimientoCurso
      */
     public GUIMantenimientoCurso() {
         initComponents();
+        panelBotonesMantenimiento1.setVentana(this);
+    }
+    
+     public void setControlador(Controlador manejador){
+        panelBotonesMantenimiento1.setControlador(manejador);
+    }
+
+    public void setCamposClave(String[] CamposClave){
+        panelBotonesMantenimiento1.addCamposClave(CamposClave);
+    }
+
+    public void setDatosTabla(String datos[][],String etiquetas[]){
+        panelListadoCurso1.setValores(datos, etiquetas);
+    }
+    public String[] getFileSeleccionada(){
+        return panelListadoCurso1.getdatosFila();
+    }
+
+    public String getCampoClave(){
+        return panelBotonesMantenimiento1.getCampoClave();
+    }
+
+    public String getTextoClave(){
+        return panelBotonesMantenimiento1.getTextoClave();
+    }
+
+    public void uptDate(){
+        this.validate();
     }
 
     /**
@@ -27,17 +57,31 @@ public class GUIMantenimientoCurso extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        panelBotonesMantenimiento1 = new vista.PanelBotonesMantenimiento();
+        panelListadoCurso1 = new vista.PanelListadoCurso();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(panelBotonesMantenimiento1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(panelListadoCurso1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(panelBotonesMantenimiento1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(panelListadoCurso1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
@@ -79,5 +123,7 @@ public class GUIMantenimientoCurso extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private vista.PanelBotonesMantenimiento panelBotonesMantenimiento1;
+    private vista.PanelListadoCurso panelListadoCurso1;
     // End of variables declaration//GEN-END:variables
 }
