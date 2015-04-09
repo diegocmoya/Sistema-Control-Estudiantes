@@ -17,27 +17,26 @@ public class GUICurso extends Ventana {
     /**
      * Creates new form GUICurso
      */
+    private int tipo;
+    private RegistroCurso registro;
+    private GUIAdminCurso gUIAdminCurso;
+   
     public GUICurso() {
         initComponents();
+        panelBotonesAccion1.init(this);
     }
     
-    RegistroCurso registro;
-    GUIAdminCurso gUIAdminCurso;
-    private int tipo;
-    
-    
-    public void init (int tipo,RegistroCurso registro, GUIAdminCurso gUIAdminCurso ) {
+        public void init (int tipo, RegistroCurso registro, GUIAdminCurso gUIAdminCurso) {
         this.tipo = tipo;
         this.registro = registro;
         this.gUIAdminCurso = gUIAdminCurso;
-        ManejadorCurso manejador=new ManejadorCurso(registro, gUIAdminCurso,this,panelCurso1);
+            ManejadorCurso manejador=new ManejadorCurso(registro, gUIAdminCurso,this,panelCurso1);
         panelBotonesAccion1.setControlador(manejador);
     }
     
     public int getTipo(){
         return tipo;
     }
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -56,20 +55,21 @@ public class GUICurso extends Ventana {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(panelBotonesAccion1, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(panelCurso1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(101, 101, 101)
-                        .addComponent(panelBotonesAccion1, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addComponent(panelCurso1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(1, 1, 1)
                 .addComponent(panelCurso1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(panelBotonesAccion1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 33, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
